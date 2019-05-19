@@ -33,13 +33,16 @@ module.exports.datastores = {
      ***************************************************************************/
 
     default: {
-        adapter: 'sails-postgresql',
-        database: 'nutritionist',
-        host: 'localhost',
         user: 'postgres',
         password: 'root',
-        port: 5432,
-        pool: false,
-        ssl: false
-    },
+        database: 'nutritionist',
+        dialect: 'postgres',
+        options: {
+            dialect: 'postgres',
+            host: 'localhost',
+            port: 5432,
+            logging: true
+        }
+    }
+
 };

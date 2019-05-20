@@ -11,6 +11,19 @@ module.exports = {
 			type: Sequelize.STRING
 		}
 	},
+	associations: function() {
+		sails.models.users.belongsToMany(sails.models.users, {
+			through: {
+			    model: sails.models.userrole,
+			    unique: false
+			},
+			as: 'users',
+			foreignKey: {
+				name: 'roleId',
+				unique: false
+			}
+		}); 
+	},
 	options: { 
 		tableName: 'roles'
 	}

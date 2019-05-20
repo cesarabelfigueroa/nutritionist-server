@@ -1,5 +1,5 @@
 /**
- * UsersController
+ * RolesController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -7,7 +7,7 @@
 
 let _ = require('lodash');
 
-let usersModel = sails.models.users;
+let rolesModel = sails.models.roles;
 
 let _delete = async function(parameters) {
 	let where = {};
@@ -20,10 +20,10 @@ let _delete = async function(parameters) {
 		where.name = parameters.name;
 	}
 
-	let users = await usersModel.destroy({
+	let roles = await rolesModel.destroy({
 		where: where
 	});
-	return users;
+	return roles;
 };
 
 let _update = async function(parameters) {
@@ -33,11 +33,11 @@ let _update = async function(parameters) {
 		delete parameters.id;
 	}
 
-	let users = await usersModel.update({ ...parameters
+	let roles = await rolesModel.update({ ...parameters
 	}, {
 		where: where
 	});
-	return users;
+	return roles;
 };
 
 
@@ -51,57 +51,55 @@ let _list = async function(parameters) {
 		where.id = parameters.id;
 	}
 
-	if (_.has(parameters, 'lastname')) {
-		where.lastname = parameters.lastname;
+	if (_.has(parameters, 'color')) {
+		where.color = parameters.color;
 	}
 
-	if (_.has(parameters, 'username')) {
-		where.username = parameters.username;
+	if (_.has(parameters, 'description')) {
+		where.description = parameters.description;
 	}
 
-	let users = await usersModel.findAll({
+	let roles = await rolesModel.findAll({
 		where: where,
 		include: [{
 			model: sails.models.roles,
-			as: 'roles'
+			as: 'users'
 		}]
 	});
-	return users;
+	return roles;
 };
 
 
 let _create = async function(parameters) {
 	let name = parameters.name;
-	let password = parameters.password;
-	let lastname = parameters.lastname;
-	let username = parameters.username;
-	let user = await usersModel.create({
+	let color = parameters.color;
+	let description = parameters.description;
+	let roles = await rolesModel.create({
 		name,
-		password,
-		lastname,
-		username
+		color,
+		description
 	});
 
-	return user;
+	return roles;
 };
 
 module.exports = {
 	list: async function(request, response) {
-		let users = await _list(request.query);
-		response.json(users);
+		let roles = await _list(request.query);
+		response.json(roles);
 	},
 	create: function(request, response) {
-		let user = _create(request.body);
+		let role = _create(request.body);
 		response.json({
 			created: true
 		});
 	},
 	delete: async function(request, response) {
-		let users = await _delete(request.body);
-		response.json(users);
+		let roles = await _delete(request.body);
+		response.json(roles);
 	},
 	update: async function(request, response) {
-		let user = _update(request.body);
+		let role = _update(request.body);
 		response.json({
 			updated: true
 		});

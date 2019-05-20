@@ -1,6 +1,3 @@
-
-
-
 module.exports = {
 	attributes: {
 		name: {
@@ -24,11 +21,15 @@ module.exports = {
 		tableName: 'users'
 	},
 	associations: function() {
-		sails.models.users.hasMany(sails.models.roles, {
+		sails.models.users.belongsToMany(sails.models.roles, {
+			through: {
+			    model: sails.models.userrole,
+			    unique: false
+			},
 			as: 'roles',
 			foreignKey: {
 				name: 'userId',
-				allowNull: false
+				unique: false
 			}
 		});
 	}

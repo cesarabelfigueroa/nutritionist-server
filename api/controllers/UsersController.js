@@ -82,7 +82,14 @@ let _create = async function(parameters) {
 		username
 	});
 
-	return user;
+	user = await _list({
+		name,
+		password,
+		lastname,
+		username
+	});
+
+	return user[0];
 };
 
 module.exports = {

@@ -23,7 +23,9 @@ let _delete = async function(parameters) {
 	let users = await usersModel.destroy({
 		where: where
 	});
-	return users;
+	return {
+		deleted: true
+	};
 };
 
 let _update = async function(parameters) {
@@ -37,6 +39,9 @@ let _update = async function(parameters) {
 	}, {
 		where: where
 	});
+
+
+	users = await  _list(where)[0];
 	return users;
 };
 

@@ -25,7 +25,9 @@ module.exports.routes = {
   'DELETE /users': {action: 'users/delete'},
   'PATCH /users': {action: 'users/update'},
   'GET /foods': {action: 'foods/list'},
-  'POST /foods': {action: 'foods/create'}
+  'POST /foods': {action: 'foods/create'},
+  'DELETE /foods': {action: 'foods/delete'},
+  'PATCH /foodss': {action: 'foods/update'}
 
 
   /***************************************************************************

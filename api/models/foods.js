@@ -23,5 +23,18 @@ module.exports = {
 	options: {
 		tableName: 'foods'
 	},
+	associations: function() {
+		sails.models.foods.belongsToMany(sails.models.tags, {
+			through: {
+			    model: sails.models.foodtag,
+			    unique: false
+			},
+			as: 'tags',
+			foreignKey: {
+				name: 'foodId',
+				unique: false
+			}
+		});
+	}
 };
 

@@ -27,7 +27,15 @@ module.exports.routes = {
   'GET /foods': {action: 'foods/list'},
   'POST /foods': {action: 'foods/create'},
   'DELETE /foods': {action: 'foods/delete'},
-  'PATCH /foods': {action: 'foods/update'}
+  'PATCH /foods': {action: 'foods/update'},
+  'GET /tags': {action: 'tags/list'},
+  'POST /tags': {action: 'tags/create'},
+  'DELETE /tags': {action: 'tags/delete'},
+  'PATCH /tags': {action: 'tags/update'},
+  'GET /roles': {action: 'roles/list'},
+  'POST /roles': {action: 'roles/create'},
+  'DELETE /roles': {action: 'roles/delete'},
+  'PATCH /roles': {action: 'roles/update'}
 
 
   /***************************************************************************

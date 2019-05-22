@@ -30,9 +30,9 @@ let _list = async function(parameters) {
 	let foods = await foodsModel.findAll({
 		where: where,
 	});
+
 	return foods;
 };
-
 
 let _create = async function(parameters) {
 	let name = parameters.name;
@@ -67,6 +67,7 @@ let _delete = async function(parameters) {
 	let foods = await foodsModel.destroy({
 		where: where
 	});
+
 	return {
 		deleted: true
 	};

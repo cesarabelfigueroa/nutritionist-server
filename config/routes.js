@@ -36,6 +36,10 @@ module.exports.routes = {
   'DELETE /roles': { action: 'roles/delete' },
   'PATCH /roles': { action: 'roles/update' },
 
+  'GET /categories': { action: 'categories/list' },
+  'POST /categories': { action: 'categories/create' },
+  'DELETE /categories': { action: 'categories/delete' },
+  'PATCH /categories': { action: 'categories/update' },
   /*
   
     '/': { view: 'pages/homepage' },

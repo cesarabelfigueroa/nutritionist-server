@@ -214,7 +214,7 @@ module.exports = {
          *                                                                          *
          ***************************************************************************/
         cookie: {
-            // secure: true,
+            secure: true,
             maxAge: 24 * 60 * 60 * 1000, // 24 hours
         },
 
@@ -233,6 +233,13 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     sockets: {
+        beforeConnect: function(handshake, proceed) {
+
+            // Send back `true` to allow the socket to connect.
+            // (Or send back `false` to reject the attempt.)
+            return proceed(undefined, true);
+
+        }
 
         /***************************************************************************
          *                                                                          *
@@ -288,14 +295,6 @@ module.exports = {
         level: 'debug'
     },
 
-
-    beforeConnect: function(handshake, proceed) {
-
-        // Send back `true` to allow the socket to connect.
-        // (Or send back `false` to reject the attempt.)
-        return proceed(undefined, true);
-
-    },
 
     /***************************************************************************
      *                                                                          *

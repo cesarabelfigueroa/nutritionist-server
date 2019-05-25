@@ -57,7 +57,7 @@ let _list = async function(parameters) {
 	let categories = await categoriesModel.findAll({
 		where: where,
 		include: [{
-			model: sails.models.categories,
+			model: sails.models.users,
 			as: 'users'
 		}]
 	});

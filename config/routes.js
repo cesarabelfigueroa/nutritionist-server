@@ -21,6 +21,55 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
+  'GET /entries': { action: 'entries/list' },
+  'POST /entries': { action: 'entries/create' },
+  'DELETE /entries': { action: 'entries/delete' },
+  'PATCH /entries': { action: 'entries/update' },
+
+  'GET /users': { action: 'users/list' },
+  'POST /users': { action: 'users/create' },
+  'DELETE /users': { action: 'users/delete' },
+  'PATCH /users': { action: 'users/update' },
+
+  'GET /roles': { action: 'roles/list' },
+  'POST /roles': { action: 'roles/create' },
+  'DELETE /roles': { action: 'roles/delete' },
+  'PATCH /roles': { action: 'roles/update' },
+
+  'GET /categories': { action: 'categories/list' },
+  'POST /categories': { action: 'categories/create' },
+  'DELETE /categories': { action: 'categories/delete' },
+  'PATCH /categories': { action: 'categories/update' },
+
+  'GET /foods': { action: 'foods/list' },
+  'POST /foods': { action: 'foods/create' },
+  'DELETE /foods': { action: 'foods/delete' },
+  'PATCH /foods': { action: 'foods/update' },
+
+  'GET /tags': { action: 'tags/list' },
+  'POST /tags': { action: 'tags/create' },
+  'DELETE /tags': { action: 'tags/delete' },
+  'PATCH /tags': { action: 'tags/update' },
+
+  'GET /foodTags': { action: 'foodsTags/list' },
+  'POST /foodTags': { action: 'foodsTags/create' },
+  'DELETE /foodTags': { action: 'foodsTags/delete' },
+  'PATCH /foodTags': { action: 'foodsTags/update' },
+  
+  /*
+  
+    '/': { view: 'pages/homepage' },
+    'GET /users': {action: 'users/list'},
+    'POST /users': {action: 'users/create'},
+    'DELETE /users': {action: 'users/delete'},
+    'PATCH /users': {action: 'users/update'}
+  
+    '/': { view: 'pages/homepage' },
+    'GET /entries': {action: 'entries/list'},
+    'POST /entries': {action: 'entries/create'},
+    'DELETE /entries': {action: 'entries/delete'},
+    'PATCH /entries': {action: 'entries/update'}
+  */
 
   /***************************************************************************
   *                                                                          *

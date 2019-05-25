@@ -55,7 +55,6 @@ let _list = async function(parameters) {
 		where.roleId = parameters.roleId;
 	}
 
-
 	let usersRoles = await rolesUsersModel.findAll({
 		where: where
 	});

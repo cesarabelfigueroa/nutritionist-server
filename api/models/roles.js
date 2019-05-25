@@ -12,7 +12,7 @@ module.exports = {
 		}
 	},
 	associations: function() {
-		sails.models.users.belongsToMany(sails.models.users, {
+		sails.models.roles.belongsToMany(sails.models.users, {
 			through: {
 			    model: sails.models.userrole,
 			    unique: false

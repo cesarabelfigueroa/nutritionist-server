@@ -62,7 +62,7 @@ let _list = async function(parameters) {
 	let roles = await rolesModel.findAll({
 		where: where,
 		include: [{
-			model: sails.models.roles,
+			model: sails.models.users,
 			as: 'users'
 		}]
 	});

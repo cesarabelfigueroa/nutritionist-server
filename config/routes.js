@@ -20,10 +20,21 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+
   'GET /entries': { action: 'entries/list' },
   'POST /entries': { action: 'entries/create' },
   'DELETE /entries': { action: 'entries/delete' },
-  'PATCH /entries': { action: 'entries/update' }
+  'PATCH /entries': { action: 'entries/update' },
+
+  'GET /users': { action: 'users/list' },
+  'POST /users': { action: 'users/create' },
+  'DELETE /users': { action: 'users/delete' },
+  'PATCH /users': { action: 'users/update' },
+
+  'GET /roles': { action: 'roles/list' },
+  'POST /roles': { action: 'roles/create' },
+  'DELETE /roles': { action: 'roles/delete' },
+  'PATCH /roles': { action: 'roles/update' },
 
   /*
   

@@ -40,6 +40,16 @@ module.exports.routes = {
   'POST /categories': { action: 'categories/create' },
   'DELETE /categories': { action: 'categories/delete' },
   'PATCH /categories': { action: 'categories/update' },
+
+  'GET /foods': { action: 'foods/list' },
+  'POST /foods': { action: 'foods/create' },
+  'DELETE /foods': { action: 'foods/delete' },
+  'PATCH /foods': { action: 'foods/update' },
+
+  'GET /tags': { action: 'tags/list' },
+  'POST /tags': { action: 'tags/create' },
+  'DELETE /tags': { action: 'tags/delete' },
+  'PATCH /tags': { action: 'tags/update' },
   /*
   
     '/': { view: 'pages/homepage' },

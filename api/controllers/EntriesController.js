@@ -43,8 +43,8 @@ let _list = async function (parameters) {
         where.id = parameters.id;
     }
 
-    if (_.has(parameters, 'user_id')) {
-        where.user_id = parameters.user_id;
+    if (_.has(parameters, 'userId')) {
+        where.userId = parameters.userId;
     }
 
     if (_.has(parameters, 'date')) {
@@ -75,16 +75,14 @@ let _list = async function (parameters) {
 
 
 let _create = async function (parameters) {
-    let id = parameters.id;
+    let userId = parameters.userId;
     let date = parameters.date;
     let water = parameters.water;
     let steps = parameters.steps;
     let weight = parameters.weight;
-    let userId = parameters.userId;
     let hours_of_sleep = parameters.hours_of_sleep;
     let entries = await entriesModel.create({
-        id,
-        user_id,
+        userId,
         date,
         water,
         steps,

@@ -34,7 +34,7 @@ module.exports.datastores = {
 
     default: {
         user: 'postgres',
-        password: '123',
+        password: 'root',
         database: 'nutritionist',
         dialect: 'postgres',
         options: {

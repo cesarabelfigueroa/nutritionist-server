@@ -50,6 +50,12 @@ module.exports.routes = {
   'POST /tags': { action: 'tags/create' },
   'DELETE /tags': { action: 'tags/delete' },
   'PATCH /tags': { action: 'tags/update' },
+
+  'GET /foodTags': { action: 'foodsTags/list' },
+  'POST /foodTags': { action: 'foodsTags/create' },
+  'DELETE /foodTags': { action: 'foodsTags/delete' },
+  'PATCH /foodTags': { action: 'foodsTags/update' },
+  
   /*
   
     '/': { view: 'pages/homepage' },

@@ -18,19 +18,19 @@ module.exports = {
 		},
 		weight: {
 			type: Sequelize.STRING,
-			allowNull = false
+			allowNull = true
 		},
 		height: {
 			type: Sequelize.STRING,
-			allowNull = false
+			allowNull = true
 		},
 		gender : {
 			type: Sequelize.STRING,
-			allowNull = false
+			allowNull = true
 		},
 		age : {
 			type: Sequelize.STRING,
-			allowNull = false
+			allowNull = true
 		},
 	},
 	options: {

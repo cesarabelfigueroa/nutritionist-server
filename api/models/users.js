@@ -15,7 +15,23 @@ module.exports = {
 		password: {
 			type: Sequelize.STRING,
 			allowNull: false
-		}
+		},
+		weight: {
+			type: Sequelize.STRING,
+			allowNull: true
+		},
+		height: {
+			type: Sequelize.STRING,
+			allowNull: true
+		},
+		gender : {
+			type: Sequelize.STRING,
+			allowNull: true
+		},
+		age : {
+			type: Sequelize.STRING,
+			allowNull: true
+		},
 	},
 	options: {
 		tableName: 'users'

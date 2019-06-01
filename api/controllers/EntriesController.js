@@ -84,7 +84,7 @@ let _create = async function (parameters) {
     let hours_of_sleep = parameters.hours_of_sleep;
     let entries = await entriesModel.create({
         id,
-        user_id,
+        userId,
         date,
         water,
         steps,

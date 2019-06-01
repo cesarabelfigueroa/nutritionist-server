@@ -1,10 +1,5 @@
 module.exports = {
 	attributes: {
-		id: {
-			type: Sequelize.INTEGER,
-			allowNull: false,
-			primaryKey: true
-		},
 		userId: {
 			type: Sequelize.INTEGER,
 			allowNull: false,
@@ -15,19 +10,19 @@ module.exports = {
 			allowNull: false
 		},
 		water: {
-			type: Sequelize.STRING,
+			type: Sequelize.DOUBLE,
 			allowNull: false
 		},
 		steps: {
-			type: Sequelize.STRING,
+			type: Sequelize.INTEGER,
 			allowNull: false
 		},
 		weight: {
-			type: Sequelize.STRING,
+			type: Sequelize.DOUBLE,
 			allowNull: false
 		},
 		hours_of_sleep: {
-			type: Sequelize.STRING,
+			type: Sequelize.DOUBLE,
 			allowNull: false
 		}
 	},

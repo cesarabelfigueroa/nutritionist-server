@@ -64,6 +64,22 @@ let _list = async function(parameters) {
 		where.username = parameters.username;
 	}
 
+	if (_.has(parameters, 'weight')) {
+		where.weight = parameters.weight;
+	}
+
+	if (_.has(parameters, 'height')) {
+		where.height = parameters.height;
+	}
+
+	if (_.has(parameters, 'gender')) {
+		where.gender = parameters.gender;
+	}
+
+	if (_.has(parameters, 'age')) {
+		where.age = parameters.age;
+	}	
+
 	let users = await usersModel.findAll({
 		where: where,
 		include: [{
@@ -80,18 +96,30 @@ let _create = async function(parameters) {
 	let password = parameters.password;
 	let lastname = parameters.lastname;
 	let username = parameters.username;
+	let gender = parameters.gender;
+	let age = parameters.age;
+	let weight = parameters.weight;
+	let height = parameters.height;
 	let user = await usersModel.create({
 		name,
 		password,
 		lastname,
-		username
+		username,
+		gender,
+		age,
+		weight,
+		height
 	});
 
 	user = await _list({
 		name,
 		password,
 		lastname,
-		username
+		username,
+		gender,
+		age,
+		weight,
+		height
 	});
 
 	return user[0];

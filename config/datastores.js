@@ -33,15 +33,23 @@ module.exports.datastores = {
      ***************************************************************************/
 
     default: {
-        user: 'postgres',
-        password: '123',
-        database: 'nutritionist',
+        user: 'petdnillzqvpiu',
+        password: '01931009eae4896139bfb35ea90e3397d90a546a36024d305159b7db0d87f9f3',
+        database: 'd70362cb2js7h7',
         dialect: 'postgres',
+        dialectOptions: {
+            ssl: true
+        },
+        ssl: true,
         options: {
             dialect: 'postgres',
-            host: 'localhost',
+            host: 'ec2-184-72-237-95.compute-1.amazonaws.com',
             port: 5432,
-            logging: true
+            logging: true,
+            ssl: true,
+            dialectOptions: {
+                ssl: true
+            }
         }
     }
 

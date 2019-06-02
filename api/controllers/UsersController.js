@@ -105,10 +105,11 @@ let _create = async function(parameters) {
 		password,
 		lastname,
 		username,
+		weight,
+		height,
 		gender,
 		age,
-		weight,
-		height
+		
 	});
 
 	user = await _list({
@@ -116,10 +117,10 @@ let _create = async function(parameters) {
 		password,
 		lastname,
 		username,
+		weight,
+		height,
 		gender,
 		age,
-		weight,
-		height
 	});
 
 	return user[0];

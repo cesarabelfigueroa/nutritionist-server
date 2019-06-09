@@ -1,5 +1,5 @@
 /**
- * RolesController
+ * AppointmentsController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -63,63 +63,75 @@ let _update = async function(parameters) {
 
 let _list = async function(parameters) {
 	let where = {};
-	if (_.has(parameters, 'name')) {
-		where.name = parameters.name;
-	}
-
-	if (_.has(parameters, 'id')) {
+	if (_.has(parameters, 'ID')) {
 		where.id = parameters.id;
 	}
 
-	if (_.has(parameters, 'color')) {
-		where.color = parameters.color;
+	if (_.has(parameters, 'Patient_ID')) {
+		where.Patient_ID = parameters.Patient_ID;
 	}
 
-	if (_.has(parameters, 'description')) {
-		where.description = parameters.description;
+	if (_.has(parameters, 'Nutritionist_ID')) {
+		where.Nutritionist_ID = parameters.Nutritionist_ID;
 	}
 
-	let roles = await appointmentsModel.findAll({
+	if (_.has(parameters, 'Date')) {
+		where.Date = parameters.Date;
+	}
+
+	if (_.has(parameters, 'Time')) {
+		where.Time = parameters.Time;
+	}
+
+	if (_.has(parameters, 'PatientData')) {
+		where.PatientData = parameters.PatientData;
+	}
+
+	let appointments = await appointmentsModel.findAll({
 		where: where,
-		include: [{
+		/*include: [{
 			model: sails.models.roles,
 			as: 'users'
-		}]
+		}]*/
 	});
-	return roles;
+	return appointments;
 };
 
 
 let _create = async function(parameters) {
-	let name = parameters.name;
-	let color = parameters.color;
-	let description = parameters.description;
-	let roles = await appointmentsModel.create({
-		name,
-		color,
-		description
+	let Patient_ID = parameters.Patient_ID;
+	let Nutritionist_ID = parameters.Nutritionist_ID;
+	let Date = parameters.Date;
+	let Time = parameters.Time;
+	let PatientData = parameters.PatientData
+	let appointments = await appointmentsModel.create({
+		Patient_ID,
+		Nutritionist_ID,
+		Date,
+		Time,
+		PatientData										
 	});
 
-	return roles;
+	return appointments;
 };
 
 module.exports = {
 	list: async function(request, response) {
-		let roles = await _list(request.query);
-		response.json(roles);
+		let appointments = await _list(request.query);
+		response.json(appointments);
 	},
 	create: function(request, response) {
-		let role = _create(request.body);
+		let appointment = _create(request.body);
 		response.json({
 			created: true
 		});
 	},
 	delete: async function(request, response) {
-		let roles = await _delete(request.body);
-		response.json(roles);
+		let appointments = await _delete(request.body);
+		response.json(appointments);
 	},
 	update: async function(request, response) {
-		let role = _update(request.body);
+		let appointment = _update(request.body);
 		response.json({
 			updated: true
 		});

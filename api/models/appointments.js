@@ -26,7 +26,7 @@ module.exports = {
         }
 	},
 	associations: function() {
-		sails.models.users.belongsToMany(sails.models.users, {
+		sails.models.appointments.belongsToMany(sails.models.users, {
 			through: {
 			    model: sails.models.userappointment,
 			    unique: false
@@ -39,6 +39,6 @@ module.exports = {
 		}); 
 	},
 	options: { 
-		tableName: 'appointment'
+		tableName: 'appointments'
 	}
 };

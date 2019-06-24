@@ -36,6 +36,11 @@ module.exports.routes = {
   'DELETE /roles': { action: 'roles/delete' },
   'PATCH /roles': { action: 'roles/update' },
 
+  'GET /rolesUsers': { action: 'rolesUsers/list' },
+  'POST /rolesUsers': { action: 'rolesUsers/create' },
+  'DELETE /rolesUsers': { action: 'rolesUsers/delete' },
+  'PATCH /rolesUsers': { action: 'rolesUsers/update' },
+
   'GET /categories': { action: 'categories/list' },
   'POST /categories': { action: 'categories/create' },
   'DELETE /categories': { action: 'categories/delete' },

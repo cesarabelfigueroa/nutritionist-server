@@ -1,5 +1,14 @@
 module.exports = {
 	attributes: {
+		id: {
+			type: Sequelize.STRING,
+			allowNull: false,
+			primaryKey: true
+		},
+		ID: {
+			type: Sequelize.STRING,
+			allowNull: false
+		},
 		Patient_ID: {
 			type: Sequelize.STRING,
 			allowNull: false
@@ -8,23 +17,23 @@ module.exports = {
 			type: Sequelize.STRING,
 			allowNull: false
 		},
-		ID: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        Date: {
-            type:Sequelize.STRING,
-            allowNull:false
-        },
-        Time:{
-            type:Sequelize.STRING,
-            allowNull:false
-        },      
-        PatientData:{
-            type:Sequelize.STRING,
-            allowNull:true,
-        }
-	},
+		Date: {
+			type: Sequelize.STRING,
+			allowNull: false
+		},
+		Time: {
+			type: Sequelize.STRING,
+			allowNull: false
+		},
+		PatientData: {
+			type: Sequelize.STRING,
+			allowNull: true,
+		}
+	}
+	, options: {
+		tableName: 'appointment'
+	}
+	/*
 	associations: function() {
 		sails.models.appointments.belongsToMany(sails.models.users, {
 			through: {
@@ -33,12 +42,9 @@ module.exports = {
 			},
 			as: 'users',
 			foreignKey: {
-				name: 'appointmentId',
+				name: 'appointmentsId',
 				unique: false
 			}
 		}); 
-	},
-	options: { 
-		tableName: 'appointments'
-	}
+	},*/
 };

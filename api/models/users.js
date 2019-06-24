@@ -24,11 +24,11 @@ module.exports = {
 			type: Sequelize.STRING,
 			allowNull: true
 		},
-		gender : {
+		gender: {
 			type: Sequelize.STRING,
 			allowNull: true
 		},
-		age : {
+		age: {
 			type: Sequelize.STRING,
 			allowNull: true
 		},
@@ -36,7 +36,7 @@ module.exports = {
 	options: {
 		tableName: 'users'
 	},
-	associations: function() {
+	associations: function () {
 		sails.models.users.belongsToMany(sails.models.roles, {
 			through: {
 				model: sails.models.userrole,
@@ -66,6 +66,18 @@ module.exports = {
 			as: 'categories',
 			foreignKey: {
 				name: 'userId',
+				unique: false
+			}
+		});
+
+		sails.models.users.belongsToMany(sails.models.appointments, {
+			through: {
+				model: sails.models.userappointment,
+				unique: false
+			},
+			as: 'appointments',
+			foreignKey: {
+				name: 'Patient_ID',
 				unique: false
 			}
 		});
